@@ -135,14 +135,14 @@ Python · pandas · scikit-learn · S-learner · IPW · Bootstrap · Uplift · A
 
 ```text
 README.md                 项目首页
-01_*.py … 09_*.py          原始分析脚本（字节保持不变）
-11_*.py … 14_*.py          读取汇总结果的绘图脚本
+01_*.py … 09_*.py         原始分析脚本（字节保持不变）
+11_*.py … 14_*.py         读取汇总结果的绘图脚本
 requirements.txt          本机已验证的直接依赖版本
 requirements-lock.txt     原运行环境的完整pip freeze快照
 tools/                    数据获取、全新目录复现、归档校验
 data/raw/                 来源说明与原始数据校验信息
 reports/                  汇总结果与冻结设置记录
-reports/figures/           四张图、SVG及读图说明
+reports/figures/          四张图、SVG及读图说明
 docs/                     方法、结论、复现、历史过程记录
 ```
 
