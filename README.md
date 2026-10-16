@@ -17,23 +17,25 @@
 Python · pandas · scikit-learn · S-learner · IPW · Bootstrap · Uplift · ATE · Qini
 
 ## 项目目录
-├─ 01_read_and_audit.py        # 数据读取、清洗、EDA 探索性分析
-├─ 02_lock_split.py            # 数据集划分，规避数据泄露
-├─ 03_train_effect.py          # ITE 个体处理效应估计，S-learner 建模
-├─ 04_train_balance.py         # 协变量平衡性检验
-├─ 05_train_subgroups.py       # 用户分群，四类响应人群划分
-├─ 06_train_bayes.py           # Bayesian uplift 模型
-├─ 07_train_ranker.py          # Uplift 排序模型，客户增量排序
-├─ 08_validate_policies.py     # 多套营销策略离线评估
-├─ 09_final_test.py            # 指标汇总，Qini 曲线、AUUC 计算
-├─ 11~14_plot_*.py             # 可视化脚本：Qini 曲线、人群分群、策略收益对比
-├─ tools/                      # 通用工具函数
-├─ docs/                       # 方法原理、实验日志文档
-├─ reports/                    # 实验输出：指标 json、csv、可视化图表
+```
+├─ 01_read_and_audit.py      # 数据读取、清洗、EDA 探索性分析
+├─ 02_lock_split.py         # 数据集划分，规避数据泄露
+├─ 03_train_effect.py       # ITE 个体处理效应估计，S-learner 建模
+├─ 04_train_balance.py      # 协变量平衡性检验
+├─ 05_train_subgroups.py    # 用户分群，四类响应人群划分
+├─ 06_train_bayes.py        # Bayesian uplift 模型
+├─ 07_train_ranker.py       # Uplift 排序模型，客户增量排序
+├─ 08_validate_policies.py  # 多套营销策略离线评估
+├─ 09_final_test.py         # 指标汇总，Qini 曲线、AUUC 计算
+├─ 11~14_plot_*.py          # 可视化脚本：Qini 曲线、人群分群、策略收益对比
+├─ tools/                   # 通用工具函数
+├─ docs/                    # 方法原理、实验日志文档
+├─ reports/                 # 实验输出：指标 json、csv、可视化图表
 ├─ archive_manifest.json
 ├─ requirements.txt
 ├─ requirements-lock.txt
 └─ README.md
+```
 
 ## 先看结论
 
