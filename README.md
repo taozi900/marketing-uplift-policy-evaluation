@@ -5,6 +5,7 @@
 - [项目亮点](#项目亮点)
 - [项目目录](#项目目录)
 - [先看结论](#先看结论)
+- [数据与方法参考](#数据与方法参考)
 
 
 
@@ -156,8 +157,7 @@ docs/                     方法、结论、复现、历史过程记录
 后续工作应先明确成本和有业务意义的最小增量，再在新样本中随机比较候选策略。当前保留测试集已用于最终评价，新增模型需要新的独立评价数据。
 
 ## 数据与方法参考
-
-- [原发布者：MineThatData E-Mail Analytics Challenge](https://blog.minethatdata.com/2008/03/minethatdata-e-mail-analytics-and-data.html)
-- [TensorFlow Datasets：Hillstrom数据说明](https://www.tensorflow.org/datasets/catalog/hillstrom)
-- [scikit-uplift：Hillstrom加载方法](https://www.uplift-modeling.com/en/latest/api/datasets/fetch_hillstrom.html)
-- [scikit-uplift：潜在响应类型](https://www.uplift-modeling.com/en/v0.3.0/user_guide/introduction/clients.html)
+- [数据集来源：MineThatData E-Mail Analytics Challenge（Hillstrom邮件营销实验数据）](https://blog.minethatdata.com/2008/03/minethatdata-e-mail-analytics-and-data.html)
+- [TensorFlow Datasets Hillstrom数据集文档](https://www.tensorflow.org/datasets/catalog/hillstrom)
+- [scikit-uplift：Hillstrom数据集加载示例](https://www.uplift-modeling.com/en/latest/api/datasets/fetch_hillstrom.html)
+- [scikit-uplift：Uplift潜在响应类型说明](https://www.uplift-modeling.com/en/v0.3.1/user_guide/introduction/clients.html)
