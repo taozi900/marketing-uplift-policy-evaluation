@@ -1,0 +1,148 @@
+{
+  "analysis_set": "test",
+  "capacity": 0.2,
+  "eligible_count": 8524,
+  "selected_count_per_policy": 1704,
+  "unit": "每万名合格客户的新增购买数（次）",
+  "role": "Display of saved stage-09 estimates only; no model or policy changes.",
+  "policy_order": [
+    "random",
+    "history_descending",
+    "p1_descending",
+    "predicted_uplift_descending"
+  ],
+  "data": [
+    {
+      "budget_fraction": "0.2",
+      "analysis_role": "primary_capacity",
+      "policy": "random",
+      "label": "固定随机名单",
+      "eligible_count": "8524",
+      "selected_count": "1704",
+      "actual_selected_fraction": "0.1999061473486626",
+      "selected_T0": "847",
+      "selected_T1": "857",
+      "selected_buyers_T0": "4",
+      "selected_buyers_T1": "10",
+      "selected_negative_predicted_uplift": "0",
+      "sparse_selected_buyers": "True",
+      "incremental_per_10000_eligible": "14.077897700610043",
+      "ci_low_per_10000_eligible": "-2.346316283435007",
+      "ci_high_per_10000_eligible": "32.8484279680901",
+      "bootstrap_ci_degenerate": "False",
+      "analysis_set": "test"
+    },
+    {
+      "budget_fraction": "0.2",
+      "analysis_role": "primary_capacity",
+      "policy": "history_descending",
+      "label": "历史消费排序",
+      "eligible_count": "8524",
+      "selected_count": "1704",
+      "actual_selected_fraction": "0.1999061473486626",
+      "selected_T0": "843",
+      "selected_T1": "861",
+      "selected_buyers_T0": "7",
+      "selected_buyers_T1": "17",
+      "selected_negative_predicted_uplift": "0",
+      "sparse_selected_buyers": "False",
+      "incremental_per_10000_eligible": "23.46316283435007",
+      "ci_low_per_10000_eligible": "2.346316283435007",
+      "ci_high_per_10000_eligible": "44.580009385265136",
+      "bootstrap_ci_degenerate": "False",
+      "analysis_set": "test"
+    },
+    {
+      "budget_fraction": "0.2",
+      "analysis_role": "primary_capacity",
+      "policy": "p1_descending",
+      "label": "购买概率排序",
+      "eligible_count": "8524",
+      "selected_count": "1704",
+      "actual_selected_fraction": "0.1999061473486626",
+      "selected_T0": "830",
+      "selected_T1": "874",
+      "selected_buyers_T0": "9",
+      "selected_buyers_T1": "17",
+      "selected_negative_predicted_uplift": "0",
+      "sparse_selected_buyers": "False",
+      "incremental_per_10000_eligible": "18.770530267480055",
+      "ci_low_per_10000_eligible": "-4.692632566870014",
+      "ci_high_per_10000_eligible": "42.23369310183012",
+      "bootstrap_ci_degenerate": "False",
+      "analysis_set": "test"
+    },
+    {
+      "budget_fraction": "0.2",
+      "analysis_role": "primary_capacity",
+      "policy": "predicted_uplift_descending",
+      "label": "预测增量排序",
+      "eligible_count": "8524",
+      "selected_count": "1704",
+      "actual_selected_fraction": "0.1999061473486626",
+      "selected_T0": "826",
+      "selected_T1": "878",
+      "selected_buyers_T0": "5",
+      "selected_buyers_T1": "16",
+      "selected_negative_predicted_uplift": "0",
+      "sparse_selected_buyers": "False",
+      "incremental_per_10000_eligible": "25.809479117785077",
+      "ci_low_per_10000_eligible": "4.692632566870014",
+      "ci_high_per_10000_eligible": "46.92632566870014",
+      "bootstrap_ci_degenerate": "False",
+      "analysis_set": "test"
+    }
+  ],
+  "primary_paired_comparison": {
+    "budget_fraction": "0.2",
+    "candidate": "predicted_uplift_descending",
+    "baseline": "p1_descending",
+    "comparison_role": "primary",
+    "difference_per_10000_eligible": "7.0389488503050215",
+    "ci_low_per_10000_eligible": "-9.38526513374003",
+    "ci_high_per_10000_eligible": "25.809479117785077",
+    "lists_identical": "False",
+    "different_memberships": "1318",
+    "buyers_among_different_memberships": "15",
+    "positive_difference_contribution_rows": "9",
+    "negative_difference_contribution_rows": "6",
+    "bootstrap_ci_degenerate": "False",
+    "analysis_set": "test"
+  },
+  "interval": {
+    "repeats": 5000,
+    "seed": 20261016,
+    "interval": "pointwise percentile 95%",
+    "resampling": "paired customer rows, separately within each T arm, preserving arm sizes",
+    "conditioning": "fixed fitted model, scores and original selection indicators; no refit or reranking"
+  },
+  "sources": {
+    "policy_results": {
+      "path": "D:\\营销项目\\marketing_project_starter\\reports\\09_test_policy_results.csv",
+      "sha256": "7f5b3757f15f8a936d52a2267b24fc93a12c8b16a4e7dde225a886839edc2af5"
+    },
+    "policy_differences": {
+      "path": "D:\\营销项目\\marketing_project_starter\\reports\\09_test_policy_differences.csv",
+      "sha256": "d12b6ed67f8e00995b0ae04f91db514b569f2e59a35209900e3b682d1cfef0c9"
+    },
+    "specification": {
+      "path": "D:\\营销项目\\marketing_project_starter\\reports\\09_test_specification.json",
+      "sha256": "c367da8e76329e15247f4b2dc5536968b51dfe5104148b1b59c33872049451bd"
+    }
+  },
+  "script_sha256": "b29535b474bf870e5278e122958e7a2f2f75a7581321719adf5b6d175a49ee40",
+  "runtime": {
+    "python": "3.12.0",
+    "matplotlib": "3.10.8"
+  },
+  "outputs": {
+    "png": {
+      "file": "11_20pct_policy_intervals.png",
+      "sha256": "05a80d9ba99073967478706e8bf3b9d935e7c3933941000e474737e901e2bb41"
+    },
+    "svg": {
+      "file": "11_20pct_policy_intervals.svg",
+      "sha256": "74d6a0bc2d8e08ec10a281cd602c04307ae98890db019389e95348c2cba2472e"
+    }
+  }
+}

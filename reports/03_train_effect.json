@@ -1,0 +1,35 @@
+{
+  "analysis_set": "train",
+  "train_rows": 25567,
+  "outcome": "14-day conversion",
+  "contrast": "Mens E-Mail minus No E-Mail",
+  "risk_difference": 0.006570278922736187,
+  "risk_difference_pp": 0.6570278922736187,
+  "difference_ci_low": 0.00429606206614272,
+  "difference_ci_high": 0.008919088673458607,
+  "difference_ci_low_pp": 0.42960620661427196,
+  "difference_ci_high_pp": 0.8919088673458607,
+  "relative_lift_point_estimate": 1.1829278235117842,
+  "p_value": 2.0015519345652203e-08,
+  "test": "two-sided pooled two-proportion z-test",
+  "rate_interval": "Wilson 95%",
+  "difference_interval": "Newcombe 95%",
+  "notes": [
+    "这是预先指定主比较在训练集上的初步分析，不是独立测试集结论。",
+    "因果解释依赖原始随机分配描述；结构审计本身不能证明随机化有效。",
+    "区间和检验将每行视为独立客户；无客户ID，无法完全核验重复客户问题。",
+    "没有按字段相同去重，也没有查看验证集或测试集的购买率。",
+    "主指标为购买率差；百分点与相对提升率不是同一个单位。",
+    "不据此承诺线上提升、利润或个人客户的真实增量效果。"
+  ],
+  "source_csv_sha256": "00a6a868e05a9ffe7382da51629f6d6dce88c5acfc945e79d314ebc78fd3a2c0",
+  "split_csv_sha256": "7e0de1b0e59d952d524f5c7edbfbe122cb85212e439bfdcb9150da03bb7c3cd1",
+  "runtime": {
+    "executable": "D:\\营销项目\\marketing_project_starter\\.venv\\Scripts\\python.exe",
+    "python": "3.12.0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0"
+  }
+}

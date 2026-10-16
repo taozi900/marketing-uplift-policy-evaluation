@@ -1,0 +1,90 @@
+{
+  "created_at_utc": "2026-10-15T07:33:16.710872+00:00",
+  "configuration": {
+    "version": 1,
+    "analysis_set": "train",
+    "contrast": "Mens E-Mail minus No E-Mail",
+    "outcome": "conversion",
+    "raw_feature_whitelist": [
+      "recency",
+      "history",
+      "newbie",
+      "mens",
+      "womens",
+      "zip_code",
+      "channel"
+    ],
+    "excluded_from_customer_covariates_Z": [
+      "history_segment",
+      "T",
+      "segment",
+      "source_row_proxy",
+      "visit",
+      "conversion",
+      "spend"
+    ],
+    "numeric": "log_history=log1p(history); StandardScaler fitted on the full training covariates only",
+    "binary": [
+      "newbie",
+      "mens",
+      "womens"
+    ],
+    "categorical": {
+      "columns": [
+        "zip_code",
+        "channel"
+      ],
+      "encoding": "training-only OneHotEncoder",
+      "drop": "first",
+      "handle_unknown": "error",
+      "raw_spelling": "preserved"
+    },
+    "model": "single S-learner logistic regression, L2 penalty",
+    "design": "[Z, T, T*Z_selected]; Z includes all allowed main effects",
+    "treatment_interactions": [
+      "num__recency",
+      "num__log_history",
+      "binary__newbie"
+    ],
+    "parameters": {
+      "C": 1.0,
+      "solver": "lbfgs",
+      "max_iter": 5000,
+      "tol": 1e-08,
+      "class_weight": null,
+      "fit_intercept": true
+    },
+    "penalty_api": "Use LogisticRegression's L2 defaults; omit the deprecated penalty keyword.",
+    "counterfactual_scores": {
+      "p0": "set T=0",
+      "p1": "set T=1",
+      "predicted_uplift": "p1-p0"
+    },
+    "proposed_policy_comparison": {
+      "strategies": [
+        "random",
+        "history_descending",
+        "p1_descending",
+        "predicted_uplift_descending"
+      ],
+      "primary_capacity": 0.2,
+      "exploratory_capacities": [
+        0.05,
+        0.1,
+        0.3
+      ],
+      "capacity_rule": "floor(q*N), same eligible rows and capacity for every strategy",
+      "score_tie_rule": "source_row_proxy ascending",
+      "random_seed": 20261014,
+      "negative_uplift": "Report selected negative-score count; no automatic live contact."
+    },
+    "selection_context": "Training design recorded after stages 03-06 training analyses and before model fitting; no held-out outcome-based tuning. Three interaction variables follow the original reference formula; fixed L2 regularization is a new implementation choice.",
+    "reporting": "Training predictions demonstrate score calculation only; validation and test reserved for later stages."
+  },
+  "configuration_sha256": "5e77904026335e41684f43b458d608a697bcf5b00a43833aac6a41b4b50359a6",
+  "source_csv_sha256": "00a6a868e05a9ffe7382da51629f6d6dce88c5acfc945e79d314ebc78fd3a2c0",
+  "split_csv_sha256": "7e0de1b0e59d952d524f5c7edbfbe122cb85212e439bfdcb9150da03bb7c3cd1",
+  "stage04_script_sha256": "bcc95946d0510ea0f484507dce75d8ef27fb1b5fcc5dd1d27750ec8536a4c424",
+  "stage05_script_sha256": "5c4829c802edddb302bdaa4cb5e7a719c9b402fb303bb8ad62ecf0c9df988f15",
+  "note": "已查看此前训练阶段结果；本轮新增模型设计，不冒充未看数据的预注册。"
+}

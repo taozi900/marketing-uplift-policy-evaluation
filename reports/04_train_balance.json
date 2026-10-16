@@ -1,0 +1,100 @@
+{
+  "analysis_set": "train",
+  "train_rows": 25567,
+  "arm_counts": {
+    "0": 12783,
+    "1": 12784
+  },
+  "features_checked": [
+    "recency",
+    "history",
+    "history_segment",
+    "mens",
+    "womens",
+    "zip_code",
+    "newbie",
+    "channel",
+    "log1p_history (fixed auxiliary transform)"
+  ],
+  "reference_abs_smd": 0.1,
+  "diagnostic_rows": 19,
+  "rows_needing_review": 0,
+  "max_finite_abs_smd": 0.021795955670827157,
+  "continuous_distribution_summary": {
+    "recency": {
+      "T0": {
+        "mean": 5.740671203942736,
+        "sd": 3.486852219547017,
+        "q25": 2.0,
+        "median": 5.0,
+        "q75": 9.0,
+        "q95": 11.0
+      },
+      "T1": {
+        "mean": 5.774718397997497,
+        "sd": 3.522496059043377,
+        "q25": 2.0,
+        "median": 6.0,
+        "q75": 9.0,
+        "q95": 11.0
+      }
+    },
+    "history": {
+      "T0": {
+        "mean": 243.9733137761089,
+        "sd": 256.2227885544891,
+        "q25": 65.775,
+        "median": 158.6,
+        "q75": 328.975,
+        "q95": 757.75
+      },
+      "T1": {
+        "mean": 243.66609120775968,
+        "sd": 261.84051048509326,
+        "q25": 63.7375,
+        "median": 158.93,
+        "q75": 324.90749999999997,
+        "q95": 767.1889999999995
+      }
+    },
+    "log1p_history": {
+      "T0": {
+        "mean": 5.013534737064702,
+        "sd": 1.0228867121421872,
+        "q25": 4.201328419786735,
+        "median": 5.072670685015709,
+        "q75": 5.799016884716089,
+        "q95": 6.631672341591997
+      },
+      "T1": {
+        "mean": 5.006297083093825,
+        "sd": 1.0235637433470086,
+        "q25": 4.170340629512928,
+        "median": 5.074736061161111,
+        "q75": 5.786613597978597,
+        "q95": 6.644035784130733
+      }
+    }
+  },
+  "source_reference": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3472075/",
+  "notes": [
+    "T1为男装邮件、T0为不发邮件；SMD的方向始终为T1减T0。",
+    "连续变量分母使用两组ddof=1样本方差的平均开方。",
+    "0/1及分类指示变量分母使用两组p(1-p)的平均开方。",
+    "0.1只是描述性参考线；不做基线显著性筛选，不据此判定随机化成功。",
+    "SMD诊断均值/比例差异；不能排除尾部、联合分布或未观测特征差异。",
+    "原数据无客户ID，原始行号不是身份验证；没有按属性相同去重。",
+    "history及history_segment同时用于诊断；后续模型不必机械地同时使用。",
+    "mens/womens是历史购买品类标记，不是客户性别。",
+    "同常量列单独标记并按惯例记SMD=0；不同常量列SMD留空且明确需核查。",
+    "本脚本没有读取visit、conversion、spend，不更改数据或重新拆分。"
+  ],
+  "runtime": {
+    "executable": "D:\\营销项目\\marketing_project_starter\\.venv\\Scripts\\python.exe",
+    "python": "3.12.0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6"
+  },
+  "source_csv_sha256": "00a6a868e05a9ffe7382da51629f6d6dce88c5acfc945e79d314ebc78fd3a2c0",
+  "split_csv_sha256": "7e0de1b0e59d952d524f5c7edbfbe122cb85212e439bfdcb9150da03bb7c3cd1"
+}

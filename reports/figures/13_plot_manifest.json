@@ -1,0 +1,72 @@
+{
+  "figure_type": "conceptual_potential_response_types",
+  "contains_customer_records": false,
+  "contains_estimated_group_counts": false,
+  "classifies_real_customers": false,
+  "refits_model": false,
+  "window": "Same campaign and same 14-day binary purchase window",
+  "types": [
+    {
+      "key": "persuadables",
+      "title": "可促成购买",
+      "english": "Persuadables",
+      "Y0": 0,
+      "Y1": 1,
+      "statement": "不发不买，发了才买",
+      "effect": "营销作用：增加购买",
+      "implication": "正增量类型，是营销触达的理论关注对象",
+      "accent": "#117A63",
+      "background": "#EAF6F0"
+    },
+    {
+      "key": "sure_things",
+      "title": "自然购买",
+      "english": "Sure Things",
+      "Y0": 1,
+      "Y1": 1,
+      "statement": "不发也买，发了仍买",
+      "effect": "营销作用：不改变是否购买",
+      "implication": "客户会购买，但本次营销没有增加购买人数",
+      "accent": "#476F8D",
+      "background": "#EEF4F9"
+    },
+    {
+      "key": "lost_causes",
+      "title": "本次均不购买",
+      "english": "Lost Causes",
+      "Y0": 0,
+      "Y1": 0,
+      "statement": "不发不买，发了也不买",
+      "effect": "营销作用：不改变是否购买",
+      "implication": "仅针对这次活动与观察窗口，并非永久标签",
+      "accent": "#63747F",
+      "background": "#F1F4F6"
+    },
+    {
+      "key": "sleeping_dogs",
+      "title": "负向响应",
+      "english": "Sleeping Dogs",
+      "Y0": 1,
+      "Y1": 0,
+      "statement": "不发会买，发了反而不买",
+      "effect": "营销作用：减少购买",
+      "implication": "理论上的负增量情形，具体原因不能由此确定",
+      "accent": "#AB5746",
+      "background": "#FFF0EA"
+    }
+  ],
+  "sources": [
+    "https://causalml.readthedocs.io/en/latest/methodology.html#value-optimization-methods",
+    "https://www.uplift-modeling.com/en/v0.3.0/user_guide/introduction/clients.html"
+  ],
+  "script_sha256": "12270f13881d6a41afaaefc53d941954e05e944c07653414089e7204d12a3944",
+  "runtime": {
+    "python": "3.12.0",
+    "matplotlib": "3.10.8"
+  },
+  "outputs": {
+    "13_customer_response_types.png": "59cb56fbbbaec02efbff34a98ff433758d1954a06f68511c0944d7a8a1472120",
+    "13_customer_response_types.svg": "0711387b732155c591bd4f078775578fea8d2f0d2cdc10f31211a8c0e5db0353",
+    "13_人群概念图说明.md": "e10278fd45a2d619f25663aa6efbd9d2e17a236bccefe74f4ae271dd50e62f1e"
+  }
+}

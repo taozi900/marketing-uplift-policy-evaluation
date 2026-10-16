@@ -1,0 +1,15 @@
+﻿term,coefficient_log_odds,note
+intercept,-5.489112205292576,coefficient from L2 logistic model; no formal significance test
+num__recency,-0.45438862752783626,coefficient from L2 logistic model; no formal significance test
+num__log_history,0.2759588195346638,coefficient from L2 logistic model; no formal significance test
+binary__newbie,-0.8208477877201602,coefficient from L2 logistic model; no formal significance test
+binary__mens,0.607485119802279,coefficient from L2 logistic model; no formal significance test
+binary__womens,0.40819867533699306,coefficient from L2 logistic model; no formal significance test
+cat__zip_code_Surburban,-0.1891062851731861,coefficient from L2 logistic model; no formal significance test
+cat__zip_code_Urban,-0.3541711108969134,coefficient from L2 logistic model; no formal significance test
+cat__channel_Phone,0.07191059131380892,coefficient from L2 logistic model; no formal significance test
+cat__channel_Web,0.23996525326357954,coefficient from L2 logistic model; no formal significance test
+T,0.7037652783311381,coefficient from L2 logistic model; no formal significance test
+T:num__recency,0.3243908644918929,coefficient from L2 logistic model; no formal significance test
+T:num__log_history,-0.044792235641558556,coefficient from L2 logistic model; no formal significance test
+T:binary__newbie,0.47538981980187023,coefficient from L2 logistic model; no formal significance test

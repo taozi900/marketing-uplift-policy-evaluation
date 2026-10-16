@@ -1,0 +1,70 @@
+{
+  "created_at_utc": "2026-10-15T05:57:49.419163+00:00",
+  "specification": {
+    "version": 1,
+    "analysis_set": "train",
+    "contrast": "Mens E-Mail minus No E-Mail",
+    "outcome": "conversion",
+    "effect_scale": "risk difference, T1 minus T0; displayed in percentage points",
+    "selection_context": "Stage-5 exploratory choices fixed before computing this round's subgroup effects; the stage-3 overall training result has already been inspected. Not preregistered.",
+    "dimensions": [
+      {
+        "feature": "newbie",
+        "levels": [
+          {
+            "value": 0,
+            "label": "非过去12个月新获取的客户"
+          },
+          {
+            "value": 1,
+            "label": "过去12个月新获取的客户"
+          }
+        ]
+      },
+      {
+        "feature": "history_segment",
+        "levels": [
+          {
+            "value": "1) $0 - $100",
+            "label": "历史消费第1档"
+          },
+          {
+            "value": "2) $100 - $200",
+            "label": "历史消费第2档"
+          },
+          {
+            "value": "3) $200 - $350",
+            "label": "历史消费第3档"
+          },
+          {
+            "value": "4) $350 - $500",
+            "label": "历史消费第4档"
+          },
+          {
+            "value": "5) $500 - $750",
+            "label": "历史消费第5档"
+          },
+          {
+            "value": "6) $750 - $1,000",
+            "label": "历史消费第6档"
+          },
+          {
+            "value": "7) $1,000 +",
+            "label": "历史消费第7档"
+          }
+        ]
+      }
+    ],
+    "intervals": {
+      "alpha": 0.05,
+      "arm_rate": "Wilson",
+      "risk_difference": "Newcombe (statsmodels method='newcomb')",
+      "coverage": "pointwise, not simultaneous; no formal subgroup screening"
+    },
+    "reporting": "Keep every planned level in original order; no outcome-driven sorting or merging."
+  },
+  "specification_sha256": "1f7fa811973977fcdad912d665e8808500300ab0db4732145a912c504bae491c",
+  "source_csv_sha256": "00a6a868e05a9ffe7382da51629f6d6dce88c5acfc945e79d314ebc78fd3a2c0",
+  "split_csv_sha256": "7e0de1b0e59d952d524f5c7edbfbe122cb85212e439bfdcb9150da03bb7c3cd1",
+  "note": "软件运行记录用于追踪，不等于第三方预注册或未查看过总体结果的证明。"
+}

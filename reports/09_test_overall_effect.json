@@ -1,0 +1,29 @@
+{
+  "analysis_set": "test",
+  "role": "planned auxiliary overall effect confirmation",
+  "contrast": "Mens E-Mail minus No E-Mail",
+  "groups": [
+    {
+      "T": 0,
+      "group": "No E-Mail",
+      "customers": 4262,
+      "buyers": 25,
+      "rate": 0.005865790708587518,
+      "rate_ci_low": 0.00397640197011014,
+      "rate_ci_high": 0.008645131047569983
+    },
+    {
+      "T": 1,
+      "group": "Mens E-Mail",
+      "customers": 4262,
+      "buyers": 55,
+      "rate": 0.012904739558892538,
+      "rate_ci_low": 0.009928210064782695,
+      "rate_ci_high": 0.016758543280280903
+    }
+  ],
+  "risk_difference_pp": 0.703894885030502,
+  "difference_ci_low_pp": 0.2966546543410359,
+  "difference_ci_high_pp": 1.1330987168874878,
+  "interval": "pointwise Newcombe 95%"
+}

@@ -1,0 +1,70 @@
+{
+  "rows": 64000,
+  "columns": 12,
+  "csv_sha256": "00a6a868e05a9ffe7382da51629f6d6dce88c5acfc945e79d314ebc78fd3a2c0",
+  "pandas_version": "3.0.6",
+  "dtypes": {
+    "recency": "int64",
+    "history_segment": "str",
+    "history": "float64",
+    "mens": "int64",
+    "womens": "int64",
+    "zip_code": "str",
+    "newbie": "int64",
+    "channel": "str",
+    "segment": "str",
+    "visit": "int64",
+    "conversion": "int64",
+    "spend": "float64"
+  },
+  "missing_values": {
+    "recency": 0,
+    "history_segment": 0,
+    "history": 0,
+    "mens": 0,
+    "womens": 0,
+    "zip_code": 0,
+    "newbie": 0,
+    "channel": 0,
+    "segment": 0,
+    "visit": 0,
+    "conversion": 0,
+    "spend": 0
+  },
+  "segment_counts": {
+    "Womens E-Mail": 21387,
+    "Mens E-Mail": 21307,
+    "No E-Mail": 21306
+  },
+  "category_values": {
+    "segment": [
+      "Mens E-Mail",
+      "No E-Mail",
+      "Womens E-Mail"
+    ],
+    "zip_code": [
+      "Rural",
+      "Surburban",
+      "Urban"
+    ],
+    "channel": [
+      "Multichannel",
+      "Phone",
+      "Web"
+    ]
+  },
+  "source_recency_range": [
+    1,
+    12
+  ],
+  "duplicate_attribute_rows": 6562,
+  "outcome_logic_checks": {
+    "conversion_1_visit_0": 0,
+    "positive_spend_conversion_0": 0
+  },
+  "notes": [
+    "无真实客户ID，属性整行相同不等于同一个人；此阶段不去重。",
+    "结构审计不是随机化有效性证明，也不是模型验证。",
+    "此阶段不查看分层购买率、不选择高效果人群、不训练模型。"
+  ]
+}

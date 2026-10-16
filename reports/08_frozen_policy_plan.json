@@ -1,0 +1,60 @@
+{
+  "created_at_utc": "2026-10-15T08:00:53.567615+00:00",
+  "payload": {
+    "configuration": {
+      "version": 1,
+      "analysis_set": "validation",
+      "outcome": "conversion",
+      "propensity": 0.5,
+      "policies": [
+        "random",
+        "history_descending",
+        "p1_descending",
+        "predicted_uplift_descending"
+      ],
+      "capacities": [
+        0.2,
+        0.05,
+        0.1,
+        0.3
+      ],
+      "primary_capacity": 0.2,
+      "capacity_rule": "K=floor(q*N), actual 0/1 lists for every policy",
+      "ranking_ties": "score descending, source_row_proxy ascending",
+      "random_rule": "sort by source_row_proxy, fixed permutation, first K; same permutation across capacities",
+      "random_seed": 20261014,
+      "estimand": "E[a(X)*(Y(1)-Y(0))], relative to sending no email to all eligible customers",
+      "estimator": "mean(a*(T*Y/0.5-(1-T)*Y/0.5))",
+      "display_unit": "incremental purchases per 10000 eligible customers, not per 10000 selected customers",
+      "bootstrap": {
+        "repeats": 5000,
+        "seed": 20261016,
+        "interval": "pointwise percentile 95%",
+        "resampling": "paired customer rows, separately within each T arm, preserving arm sizes",
+        "conditioning": "fixed fitted model, scores and original selection indicators; no refit or reranking"
+      },
+      "primary_contrast": {
+        "candidate": "predicted_uplift_descending",
+        "baseline": "p1_descending",
+        "capacity": 0.2
+      },
+      "auxiliary_contrasts": [
+        "uplift minus random",
+        "uplift minus history"
+      ],
+      "final_test_rule": "Keep all four rules, the stage-07 model and all capacities fixed. No validation winner selection. Final test primary contrast is uplift minus p1 at 20%; other contrasts/capacities are auxiliary exploration.",
+      "selection_context": "Recorded before first validation-Y analysis in this stage; earlier training analyses have been inspected."
+    },
+    "configuration_sha256": "6d8540542aaa5199465bc1fa34b1d87821cdcabc6ee5b4a68f5c30904c903291",
+    "validation_scores_sha256": "be42bef2d1c7f69f6866649bc6fdc0f9ad269eb41f243dfbb43826e6d0207207",
+    "validation_selection_sha256": "1c676fda95d3a52bea02ac888036c5df3d894ea8ec07fe613ef91f75626142b7",
+    "note": "四规则与主比较在本阶段读取验证Y前固定，未按验证成绩另选赢家；09阶段才读取测试数据。",
+    "source_csv_sha256": "00a6a868e05a9ffe7382da51629f6d6dce88c5acfc945e79d314ebc78fd3a2c0",
+    "split_csv_sha256": "7e0de1b0e59d952d524f5c7edbfbe122cb85212e439bfdcb9150da03bb7c3cd1",
+    "stage07_script_sha256": "2be93a31e834c54eec1c2184425ed2bac13ec1103d196b95b12ce920936c9e0a",
+    "model_sha256": "5e0a8bf24937ade0874ea60b4883ed040286c32f09c447364b68c2c143d20951",
+    "stage07_report_sha256": "e4045c6dd2183f35aeeb64a1766f041f1d8ab4dbf0edf6a016bf8fc898b65852",
+    "stage07_specification_sha256": "d5f732b08d948b9648261cff1cd169a1ff3a67a6ea0ff1815312b4096299f0cb",
+    "stage08_script_sha256": "3ef6b4eb5d95643686e2563f7ce42f3efa5c1b2be86a46b1a5e4dbe5599f0b73"
+  }
+}

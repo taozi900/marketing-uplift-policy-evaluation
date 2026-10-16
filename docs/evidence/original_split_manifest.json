@@ -1,0 +1,27 @@
+{
+  "seed": 20261014,
+  "contrast": "Mens E-Mail versus No E-Mail",
+  "numpy_version": "2.5.4",
+  "pandas_version": "3.0.6",
+  "primary_outcome": "conversion",
+  "primary_capacity": 0.2,
+  "split_rule": "Within each T arm: floor(60%) train, floor(20%) validation, remainder test.",
+  "stratification": "T only, no outcome-based selection",
+  "rows": 42613,
+  "source_csv_sha256": "00a6a868e05a9ffe7382da51629f6d6dce88c5acfc945e79d314ebc78fd3a2c0",
+  "split_csv_sha256": "7e0de1b0e59d952d524f5c7edbfbe122cb85212e439bfdcb9150da03bb7c3cd1",
+  "counts": {
+    "test": {
+      "0": 4262,
+      "1": 4262
+    },
+    "train": {
+      "0": 12783,
+      "1": 12784
+    },
+    "validation": {
+      "0": 4261,
+      "1": 4261
+    }
+  }
+}

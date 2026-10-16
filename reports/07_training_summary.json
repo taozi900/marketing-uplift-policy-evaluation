@@ -1,0 +1,203 @@
+{
+  "analysis_set": "train",
+  "train_rows": 25567,
+  "created_at_utc": "2026-10-15T07:33:17.030861+00:00",
+  "configuration": {
+    "version": 1,
+    "analysis_set": "train",
+    "contrast": "Mens E-Mail minus No E-Mail",
+    "outcome": "conversion",
+    "raw_feature_whitelist": [
+      "recency",
+      "history",
+      "newbie",
+      "mens",
+      "womens",
+      "zip_code",
+      "channel"
+    ],
+    "excluded_from_customer_covariates_Z": [
+      "history_segment",
+      "T",
+      "segment",
+      "source_row_proxy",
+      "visit",
+      "conversion",
+      "spend"
+    ],
+    "numeric": "log_history=log1p(history); StandardScaler fitted on the full training covariates only",
+    "binary": [
+      "newbie",
+      "mens",
+      "womens"
+    ],
+    "categorical": {
+      "columns": [
+        "zip_code",
+        "channel"
+      ],
+      "encoding": "training-only OneHotEncoder",
+      "drop": "first",
+      "handle_unknown": "error",
+      "raw_spelling": "preserved"
+    },
+    "model": "single S-learner logistic regression, L2 penalty",
+    "design": "[Z, T, T*Z_selected]; Z includes all allowed main effects",
+    "treatment_interactions": [
+      "num__recency",
+      "num__log_history",
+      "binary__newbie"
+    ],
+    "parameters": {
+      "C": 1.0,
+      "solver": "lbfgs",
+      "max_iter": 5000,
+      "tol": 1e-08,
+      "class_weight": null,
+      "fit_intercept": true
+    },
+    "penalty_api": "Use LogisticRegression's L2 defaults; omit the deprecated penalty keyword.",
+    "counterfactual_scores": {
+      "p0": "set T=0",
+      "p1": "set T=1",
+      "predicted_uplift": "p1-p0"
+    },
+    "proposed_policy_comparison": {
+      "strategies": [
+        "random",
+        "history_descending",
+        "p1_descending",
+        "predicted_uplift_descending"
+      ],
+      "primary_capacity": 0.2,
+      "exploratory_capacities": [
+        0.05,
+        0.1,
+        0.3
+      ],
+      "capacity_rule": "floor(q*N), same eligible rows and capacity for every strategy",
+      "score_tie_rule": "source_row_proxy ascending",
+      "random_seed": 20261014,
+      "negative_uplift": "Report selected negative-score count; no automatic live contact."
+    },
+    "selection_context": "Training design recorded after stages 03-06 training analyses and before model fitting; no held-out outcome-based tuning. Three interaction variables follow the original reference formula; fixed L2 regularization is a new implementation choice.",
+    "reporting": "Training predictions demonstrate score calculation only; validation and test reserved for later stages."
+  },
+  "arm_counts": {
+    "0": 12783,
+    "1": 12784
+  },
+  "arm_buyers": {
+    "0": 71,
+    "1": 155
+  },
+  "transformed_feature_count": 9,
+  "design_column_count": 13,
+  "fitted_parameter_count_including_intercept": 14,
+  "fit_iterations": 49,
+  "fitted_preprocessing": {
+    "numeric": {
+      "recency": {
+        "training_mean": 5.757695466812688,
+        "training_scale": 3.5046244135100952
+      },
+      "log_history": {
+        "training_mean": 5.009915768536376,
+        "training_scale": 1.0231916744293594
+      }
+    },
+    "binary_passthrough": [
+      "newbie",
+      "mens",
+      "womens"
+    ],
+    "categorical": {
+      "zip_code": {
+        "training_categories": [
+          "Rural",
+          "Surburban",
+          "Urban"
+        ],
+        "reference_category": "Rural"
+      },
+      "channel": {
+        "training_categories": [
+          "Multichannel",
+          "Phone",
+          "Web"
+        ],
+        "reference_category": "Multichannel"
+      }
+    },
+    "transformed_feature_names": [
+      "num__recency",
+      "num__log_history",
+      "binary__newbie",
+      "binary__mens",
+      "binary__womens",
+      "cat__zip_code_Surburban",
+      "cat__zip_code_Urban",
+      "cat__channel_Phone",
+      "cat__channel_Web"
+    ],
+    "design_feature_names": [
+      "num__recency",
+      "num__log_history",
+      "binary__newbie",
+      "binary__mens",
+      "binary__womens",
+      "cat__zip_code_Surburban",
+      "cat__zip_code_Urban",
+      "cat__channel_Phone",
+      "cat__channel_Web",
+      "T",
+      "T:num__recency",
+      "T:num__log_history",
+      "T:binary__newbie"
+    ],
+    "interaction_indices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "training_score_summary": {
+    "predicted_uplift_mean_pp": 0.6479800346405251,
+    "negative_predicted_uplift_rows": 0,
+    "note": "拟合样本分数的描述，不是留出集效果或模型质量评价。"
+  },
+  "notes": [
+    "一个共同的概率模型给出p0和p1；购买概率排序用p1，增量排序用p1-p0。",
+    "只用训练X拟合标准化和类别编码，只用训练Y拟合逻辑回归；未读取验证/测试特征或结果。",
+    "全体segment仅读取用于来源与冻结划分核验，不作为模型特征。",
+    "原始行号只是离线代理，不是CRM身份；未按相同属性去重。",
+    "固定三项处理交互及L2强度，没有训练内搜参，没有根据验证/测试成绩调整。",
+    "未做类别平衡加权、过采样或以0.5阈值分类，保留购买概率建模含义。",
+    "预测增量是模型估计的条件平均效应分数，不是已观测的个人真实因果效应。",
+    "惩罚回归系数不附未经说明的显著性检验；交互系数位于log-odds尺度。",
+    "训练分数只用于学习与检查，不能据此声称增量排序优于购买概率或随机触达。",
+    "后续等容量比较为floor(q*N)；同分按原始行号升序，不把负增量分数自动当作触达许可。",
+    "joblib保存的是本地训练的模型；可重复加载需保留相应代码与依赖版本。"
+  ],
+  "method_references": [
+    "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html",
+    "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html"
+  ],
+  "runtime": {
+    "executable": "D:\\营销项目\\marketing_project_starter\\.venv\\Scripts\\python.exe",
+    "python": "3.12.0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit_learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "script_sha256": "2be93a31e834c54eec1c2184425ed2bac13ec1103d196b95b12ce920936c9e0a",
+  "model_sha256": "5e0a8bf24937ade0874ea60b4883ed040286c32f09c447364b68c2c143d20951",
+  "training_scores_sha256": "c4e3b8ff8025c94223c89359761842841ae8e377287362992070bd69219927d8",
+  "source_csv_sha256": "00a6a868e05a9ffe7382da51629f6d6dce88c5acfc945e79d314ebc78fd3a2c0",
+  "split_csv_sha256": "7e0de1b0e59d952d524f5c7edbfbe122cb85212e439bfdcb9150da03bb7c3cd1",
+  "stage04_script_sha256": "bcc95946d0510ea0f484507dce75d8ef27fb1b5fcc5dd1d27750ec8536a4c424",
+  "stage05_script_sha256": "5c4829c802edddb302bdaa4cb5e7a719c9b402fb303bb8ad62ecf0c9df988f15",
+  "configuration_sha256": "5e77904026335e41684f43b458d608a697bcf5b00a43833aac6a41b4b50359a6",
+  "configuration_record_sha256": "d5f732b08d948b9648261cff1cd169a1ff3a67a6ea0ff1815312b4096299f0cb"
+}

@@ -1,0 +1,94 @@
+{
+  "analysis_set": "test",
+  "capacity": 0.2,
+  "eligible_records": 8524,
+  "selected_per_policy": 1704,
+  "unit": "每万名合格客户的新增购买人数之差（离线估计，人）",
+  "role": "Display of saved paired comparisons, without re-estimation or new policy selection.",
+  "rows": [
+    {
+      "budget_fraction": "0.2",
+      "candidate": "predicted_uplift_descending",
+      "baseline": "p1_descending",
+      "comparison_role": "primary",
+      "difference_per_10000_eligible": "7.0389488503050215",
+      "ci_low_per_10000_eligible": "-9.38526513374003",
+      "ci_high_per_10000_eligible": "25.809479117785077",
+      "lists_identical": "False",
+      "different_memberships": "1318",
+      "buyers_among_different_memberships": "15",
+      "positive_difference_contribution_rows": "9",
+      "negative_difference_contribution_rows": "6",
+      "bootstrap_ci_degenerate": "False",
+      "analysis_set": "test"
+    },
+    {
+      "budget_fraction": "0.2",
+      "candidate": "predicted_uplift_descending",
+      "baseline": "random",
+      "comparison_role": "auxiliary_exploratory",
+      "difference_per_10000_eligible": "11.731581417175034",
+      "ci_low_per_10000_eligible": "-14.077897700610041",
+      "ci_high_per_10000_eligible": "35.19474425152511",
+      "lists_identical": "False",
+      "different_memberships": "2714",
+      "buyers_among_different_memberships": "27",
+      "positive_difference_contribution_rows": "16",
+      "negative_difference_contribution_rows": "11",
+      "bootstrap_ci_degenerate": "False",
+      "analysis_set": "test"
+    },
+    {
+      "budget_fraction": "0.2",
+      "candidate": "predicted_uplift_descending",
+      "baseline": "history_descending",
+      "comparison_role": "auxiliary_exploratory",
+      "difference_per_10000_eligible": "2.346316283435007",
+      "ci_low_per_10000_eligible": "-16.42421398404505",
+      "ci_high_per_10000_eligible": "21.116846550915067",
+      "lists_identical": "False",
+      "different_memberships": "1628",
+      "buyers_among_different_memberships": "17",
+      "positive_difference_contribution_rows": "9",
+      "negative_difference_contribution_rows": "8",
+      "bootstrap_ci_degenerate": "False",
+      "analysis_set": "test"
+    }
+  ],
+  "interval": {
+    "repeats": 5000,
+    "seed": 20261016,
+    "interval": "pointwise percentile 95%",
+    "resampling": "paired customer rows, separately within each T arm, preserving arm sizes",
+    "conditioning": "fixed fitted model, scores and original selection indicators; no refit or reranking"
+  },
+  "sources": {
+    "differences": {
+      "path": "D:\\营销项目\\marketing_project_starter\\reports\\09_test_policy_differences.csv",
+      "sha256": "d12b6ed67f8e00995b0ae04f91db514b569f2e59a35209900e3b682d1cfef0c9"
+    },
+    "results": {
+      "path": "D:\\营销项目\\marketing_project_starter\\reports\\09_test_policy_results.csv",
+      "sha256": "7f5b3757f15f8a936d52a2267b24fc93a12c8b16a4e7dde225a886839edc2af5"
+    },
+    "specification": {
+      "path": "D:\\营销项目\\marketing_project_starter\\reports\\09_test_specification.json",
+      "sha256": "c367da8e76329e15247f4b2dc5536968b51dfe5104148b1b59c33872049451bd"
+    }
+  },
+  "script_sha256": "b38ae5d0b203f1e9bc8d53de845add45078edf667e9c3c8e0cf2b8e64e038fcf",
+  "runtime": {
+    "python": "3.12.0",
+    "matplotlib": "3.10.8"
+  },
+  "outputs": {
+    "png": {
+      "file": "12_20pct_policy_differences.png",
+      "sha256": "dc357c0246b36e4fa50eedba9238a22de720d5b24a73e9f0cffca994912be3b9"
+    },
+    "svg": {
+      "file": "12_20pct_policy_differences.svg",
+      "sha256": "ff110155074ceae0ba56aae28c8da8fcb910988e5d911767642708811e141c61"
+    }
+  }
+}

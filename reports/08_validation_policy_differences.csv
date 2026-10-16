@@ -1,0 +1,13 @@
+﻿budget_fraction,candidate,baseline,comparison_role,difference_per_10000_eligible,ci_low_per_10000_eligible,ci_high_per_10000_eligible,lists_identical,different_memberships,buyers_among_different_memberships,positive_difference_contribution_rows,negative_difference_contribution_rows,bootstrap_ci_degenerate
+0.2,predicted_uplift_descending,p1_descending,primary,-7.040600797934757,-25.81553625909411,14.081201595869514,False,1380,19,8,11,False
+0.2,predicted_uplift_descending,random,auxiliary_exploratory,-9.387467730579676,-32.85613705702887,11.734334663224596,False,2732,24,10,14,False
+0.2,predicted_uplift_descending,history_descending,auxiliary_exploratory,-7.040600797934757,-25.815536259094106,9.387467730579678,False,1698,15,6,9,False
+0.05,predicted_uplift_descending,p1_descending,auxiliary_exploratory,-4.693733865289838,-18.77493546115935,7.04060079793476,False,452,8,3,5,False
+0.05,predicted_uplift_descending,random,auxiliary_exploratory,2.346866932644919,-11.734334663224596,18.77493546115935,False,814,11,6,5,False
+0.05,predicted_uplift_descending,history_descending,auxiliary_exploratory,-2.346866932644919,-16.428068528514434,11.734334663224596,False,604,9,4,5,False
+0.1,predicted_uplift_descending,p1_descending,auxiliary_exploratory,-11.734334663224596,-25.81553625909411,2.346866932644918,False,724,9,2,7,False
+0.1,predicted_uplift_descending,random,auxiliary_exploratory,-7.040600797934757,-25.81553625909411,9.387467730579678,False,1546,15,6,9,False
+0.1,predicted_uplift_descending,history_descending,auxiliary_exploratory,-7.040600797934757,-21.121802393804273,7.040600797934757,False,978,9,3,6,False
+0.3,predicted_uplift_descending,p1_descending,auxiliary_exploratory,-14.081201595869514,-39.89673785496362,11.734334663224596,False,1988,30,12,18,False
+0.3,predicted_uplift_descending,random,auxiliary_exploratory,-16.428068528514434,-44.59047172025346,9.387467730579681,False,3526,35,14,21,False
+0.3,predicted_uplift_descending,history_descending,auxiliary_exploratory,-18.77493546115935,-37.5498709223187,0.0,False,2102,16,4,12,False

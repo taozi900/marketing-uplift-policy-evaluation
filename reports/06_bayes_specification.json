@@ -1,0 +1,42 @@
+{
+  "created_at_utc": "2026-10-15T06:31:08.986504+00:00",
+  "configuration": {
+    "version": 1,
+    "analysis_set": "train",
+    "contrast": "Mens E-Mail minus No E-Mail",
+    "outcome": "conversion",
+    "model": "independent Beta priors and binomial likelihood in each arm of each view",
+    "priors": [
+      {
+        "name": "jeffreys",
+        "alpha": 0.5,
+        "beta": 0.5,
+        "role": "primary"
+      },
+      {
+        "name": "uniform",
+        "alpha": 1.0,
+        "beta": 1.0,
+        "role": "sensitivity"
+      }
+    ],
+    "seed": 20261015,
+    "draws_per_view_and_prior": 200000,
+    "random_stream": "numpy default_rng(SeedSequence([seed, view_index, prior_index]))",
+    "interval": "pointwise equal-tail 95% posterior credible interval of p1-p0",
+    "views": "overall plus the two newbie levels and seven original history_segment levels from stage 05",
+    "console_focus": [
+      "overall",
+      "history_segment=7) $1,000 +"
+    ],
+    "selection_context": "Added training exploration after stage-05 results were inspected; fixed before this stage's posterior calculations, not preregistered.",
+    "reporting": "All views and both priors retained; no ranking, formal screening or final targeting list."
+  },
+  "configuration_sha256": "5fcfc4cff990d73876bd91c20ece4c6d0316be4e6be5792a08d936063bbc96eb",
+  "source_csv_sha256": "00a6a868e05a9ffe7382da51629f6d6dce88c5acfc945e79d314ebc78fd3a2c0",
+  "split_csv_sha256": "7e0de1b0e59d952d524f5c7edbfbe122cb85212e439bfdcb9150da03bb7c3cd1",
+  "stage05_script_sha256": "5c4829c802edddb302bdaa4cb5e7a719c9b402fb303bb8ad62ecf0c9df988f15",
+  "stage05_report_sha256": "cfae3be3adcd6639cab42c2b65c85165b6af69402b5c2886b52a6736e2d05ea4",
+  "stage05_specification_sha256": "0bf823b0bebbaeda51f64f3bc3dce991692870cd72d0bffefb12aef8917e16d1",
+  "note": "运行记录不等于第三方预注册；此前已经查看05训练分层效果。"
+}

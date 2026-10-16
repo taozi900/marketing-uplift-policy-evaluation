@@ -1,0 +1,49 @@
+{
+  "figure_type": "four_prespecified_capacities_by_four_fixed_policies",
+  "analysis_set": "test",
+  "capacities": [
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "primary_capacity": 0.2,
+  "eligible_records": 8524,
+  "unit": "每万名合格客户的新增购买人数估计（离线估计，人）",
+  "selected_counts": {
+    "5%": 426,
+    "10%": 852,
+    "20%": 1704,
+    "30%": 2557
+  },
+  "no_new_model_or_capacity_selection": true,
+  "role": "Display saved point estimates and pointwise intervals; no comparisons between capacities estimated.",
+  "interval": {
+    "repeats": 5000,
+    "seed": 20261016,
+    "interval": "pointwise percentile 95%",
+    "resampling": "paired customer rows, separately within each T arm, preserving arm sizes",
+    "conditioning": "fixed fitted model, scores and original selection indicators; no refit or reranking"
+  },
+  "sources": {
+    "policy_results": {
+      "path": "D:\\营销项目\\marketing_project_starter\\reports\\09_test_policy_results.csv",
+      "sha256": "7f5b3757f15f8a936d52a2267b24fc93a12c8b16a4e7dde225a886839edc2af5"
+    },
+    "specification": {
+      "path": "D:\\营销项目\\marketing_project_starter\\reports\\09_test_specification.json",
+      "sha256": "c367da8e76329e15247f4b2dc5536968b51dfe5104148b1b59c33872049451bd"
+    }
+  },
+  "script_sha256": "6481fd7b9fbb581a50e1627b90a32928402e062b58093662487593bea692b793",
+  "runtime": {
+    "python": "3.12.0",
+    "matplotlib": "3.10.8"
+  },
+  "outputs": {
+    "14_capacity_comparison.png": "04583280ebdfefcc7120cbd07c207931e9ccb50c13a676db257c90830a2e0bb7",
+    "14_capacity_comparison.svg": "cd37559787cd48fe5fcf144e7a51b8ddffea152889451784729d4214050eab2d",
+    "14_触达比例比较图说明.md": "c2ee7cd3983c9aa9f92a50fea15e76734ed3aef93fe46110a9e6a39a3b9816e6",
+    "14_capacity_plot_data.csv": "c42b39025c404a4f49eed93234d81e08fe752aad3b4540e06e93da198a64c2a3"
+  }
+}

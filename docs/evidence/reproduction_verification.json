@@ -1,0 +1,70 @@
+{
+  "verified_date": "2026-10-16",
+  "runtime": "Windows / existing Python3.12.0 virtual environment",
+  "entry_points": [
+    {
+      "entry": "tools/fetch_data.py",
+      "exit_code": 0
+    },
+    {
+      "entry": "tools/reproduce.py",
+      "exit_code": 0
+    },
+    {
+      "entry": "11_plot_policy_results.py",
+      "exit_code": 0
+    },
+    {
+      "entry": "12_plot_policy_differences.py",
+      "exit_code": 0
+    },
+    {
+      "entry": "13_plot_customer_types.py",
+      "exit_code": 0
+    },
+    {
+      "entry": "14_plot_capacity_comparison.py",
+      "exit_code": 0
+    }
+  ],
+  "fresh_analysis_numeric_comparisons": {
+    "09_test_policy_results.csv": true,
+    "09_test_policy_differences.csv": true,
+    "09_test_overall_effect.json": true
+  },
+  "root_scripts_byte_identical_to_original": true,
+  "current_document_links_valid": true,
+  "all_python_sources_parse": true,
+  "data_fetch_verification": "Local original gzip accepted; source gzip and CSV SHA256 verified.",
+  "not_verified": [
+    "Installation into a new environment",
+    "Network re-download",
+    "Other operating systems",
+    "GitHub publication"
+  ],
+  "independent_clean_run": {
+    "stages_exit_zero": true,
+    "seconds": 37.812,
+    "final_byte_comparisons": {
+      "09_test_overall_effect.json": {
+        "byte_identical": true,
+        "archived_sha256": "a0bf17fd802f682995ac81c878a0c2d583abc46054a59cec424c194b607b3619",
+        "clean_sha256": "a0bf17fd802f682995ac81c878a0c2d583abc46054a59cec424c194b607b3619"
+      },
+      "09_test_policy_results.csv": {
+        "byte_identical": true,
+        "archived_sha256": "7f5b3757f15f8a936d52a2267b24fc93a12c8b16a4e7dde225a886839edc2af5",
+        "clean_sha256": "7f5b3757f15f8a936d52a2267b24fc93a12c8b16a4e7dde225a886839edc2af5"
+      },
+      "09_test_policy_differences.csv": {
+        "byte_identical": true,
+        "archived_sha256": "d12b6ed67f8e00995b0ae04f91db514b569f2e59a35209900e3b682d1cfef0c9",
+        "clean_sha256": "d12b6ed67f8e00995b0ae04f91db514b569f2e59a35209900e3b682d1cfef0c9"
+      },
+      "split_assignment.csv": {
+        "byte_identical": true
+      }
+    },
+    "original_inputs_unchanged": true
+  }
+}

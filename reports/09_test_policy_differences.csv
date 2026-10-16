@@ -1,0 +1,13 @@
+﻿budget_fraction,candidate,baseline,comparison_role,difference_per_10000_eligible,ci_low_per_10000_eligible,ci_high_per_10000_eligible,lists_identical,different_memberships,buyers_among_different_memberships,positive_difference_contribution_rows,negative_difference_contribution_rows,bootstrap_ci_degenerate,analysis_set
+0.2,predicted_uplift_descending,p1_descending,primary,7.0389488503050215,-9.38526513374003,25.809479117785077,False,1318,15,9,6,False,test
+0.2,predicted_uplift_descending,random,auxiliary_exploratory,11.731581417175034,-14.077897700610041,35.19474425152511,False,2714,27,16,11,False,test
+0.2,predicted_uplift_descending,history_descending,auxiliary_exploratory,2.346316283435007,-16.42421398404505,21.116846550915067,False,1628,17,9,8,False,test
+0.05,predicted_uplift_descending,p1_descending,auxiliary_exploratory,2.346316283435007,-4.692632566870015,9.38526513374003,False,418,3,2,1,False,test
+0.05,predicted_uplift_descending,random,auxiliary_exploratory,2.346316283435007,-14.077897700610041,18.770530267480055,False,800,11,6,5,False,test
+0.05,predicted_uplift_descending,history_descending,auxiliary_exploratory,-21.11684655091506,-37.54106053496012,-4.692632566870015,False,576,13,2,11,False,test
+0.1,predicted_uplift_descending,p1_descending,auxiliary_exploratory,0.0,-11.731581417175038,14.077897700610041,False,692,8,4,4,False,test
+0.1,predicted_uplift_descending,random,auxiliary_exploratory,11.731581417175034,-9.385265133740027,32.8484279680901,False,1510,19,12,7,False,test
+0.1,predicted_uplift_descending,history_descending,auxiliary_exploratory,-14.077897700610043,-30.502111684655095,2.346316283435006,False,934,12,3,9,False,test
+0.3,predicted_uplift_descending,p1_descending,auxiliary_exploratory,14.077897700610043,-9.38526513374003,37.54106053496012,False,1986,28,17,11,False,test
+0.3,predicted_uplift_descending,random,auxiliary_exploratory,9.385265133740027,-16.42421398404505,35.19474425152511,False,3562,32,18,14,False,test
+0.3,predicted_uplift_descending,history_descending,auxiliary_exploratory,2.346316283435007,-21.11684655091506,25.809479117785077,False,2028,27,14,13,False,test

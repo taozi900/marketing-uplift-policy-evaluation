@@ -1,0 +1,301 @@
+{
+  "analysis_set": "train",
+  "train_rows": 25567,
+  "subgroup_rows": 9,
+  "created_at_utc": "2026-10-15T05:57:49.496171+00:00",
+  "arm_counts": {
+    "0": 12783,
+    "1": 12784
+  },
+  "specification": {
+    "version": 1,
+    "analysis_set": "train",
+    "contrast": "Mens E-Mail minus No E-Mail",
+    "outcome": "conversion",
+    "effect_scale": "risk difference, T1 minus T0; displayed in percentage points",
+    "selection_context": "Stage-5 exploratory choices fixed before computing this round's subgroup effects; the stage-3 overall training result has already been inspected. Not preregistered.",
+    "dimensions": [
+      {
+        "feature": "newbie",
+        "levels": [
+          {
+            "value": 0,
+            "label": "非过去12个月新获取的客户"
+          },
+          {
+            "value": 1,
+            "label": "过去12个月新获取的客户"
+          }
+        ]
+      },
+      {
+        "feature": "history_segment",
+        "levels": [
+          {
+            "value": "1) $0 - $100",
+            "label": "历史消费第1档"
+          },
+          {
+            "value": "2) $100 - $200",
+            "label": "历史消费第2档"
+          },
+          {
+            "value": "3) $200 - $350",
+            "label": "历史消费第3档"
+          },
+          {
+            "value": "4) $350 - $500",
+            "label": "历史消费第4档"
+          },
+          {
+            "value": "5) $500 - $750",
+            "label": "历史消费第5档"
+          },
+          {
+            "value": "6) $750 - $1,000",
+            "label": "历史消费第6档"
+          },
+          {
+            "value": "7) $1,000 +",
+            "label": "历史消费第7档"
+          }
+        ]
+      }
+    ],
+    "intervals": {
+      "alpha": 0.05,
+      "arm_rate": "Wilson",
+      "risk_difference": "Newcombe (statsmodels method='newcomb')",
+      "coverage": "pointwise, not simultaneous; no formal subgroup screening"
+    },
+    "reporting": "Keep every planned level in original order; no outcome-driven sorting or merging."
+  },
+  "results": [
+    {
+      "feature": "newbie",
+      "level": 0,
+      "label": "非过去12个月新获取的客户",
+      "customers_T0": 6373,
+      "buyers_T0": 47,
+      "rate_T0": 0.007374862702024165,
+      "rate_ci_low_T0": 0.00555078028876753,
+      "rate_ci_high_T0": 0.009792467532668589,
+      "customers_T1": 6354,
+      "buyers_T1": 86,
+      "rate_T1": 0.013534781240163676,
+      "rate_ci_low_T1": 0.01097326858773615,
+      "rate_ci_high_T1": 0.016684146269115387,
+      "sparse_buyers": false,
+      "risk_difference": 0.006159918538139512,
+      "risk_difference_pp": 0.6159918538139512,
+      "difference_ci_low_pp": 0.26376805868219744,
+      "difference_ci_high_pp": 0.9799393326613276,
+      "ci_width_pp": 0.7161712739791302,
+      "status": "estimated"
+    },
+    {
+      "feature": "newbie",
+      "level": 1,
+      "label": "过去12个月新获取的客户",
+      "customers_T0": 6410,
+      "buyers_T0": 24,
+      "rate_T0": 0.00374414976599064,
+      "rate_ci_low_T0": 0.0025174184730172764,
+      "rate_ci_high_T0": 0.0055653286846005165,
+      "customers_T1": 6430,
+      "buyers_T1": 69,
+      "rate_T1": 0.01073094867807154,
+      "rate_ci_low_T1": 0.008488571008788987,
+      "rate_ci_high_T1": 0.013557582868103914,
+      "sparse_buyers": false,
+      "risk_difference": 0.006986798912080901,
+      "risk_difference_pp": 0.6986798912080902,
+      "difference_ci_low_pp": 0.4098036155244318,
+      "difference_ci_high_pp": 1.0068150970742824,
+      "ci_width_pp": 0.5970114815498506,
+      "status": "estimated"
+    },
+    {
+      "feature": "history_segment",
+      "level": "1) $0 - $100",
+      "label": "历史消费第1档",
+      "customers_T0": 4495,
+      "buyers_T0": 17,
+      "rate_T0": 0.003781979977753059,
+      "rate_ci_low_T0": 0.002362685423802283,
+      "rate_ci_high_T0": 0.006048693187128744,
+      "customers_T1": 4626,
+      "buyers_T1": 42,
+      "rate_T1": 0.009079118028534372,
+      "rate_ci_low_T1": 0.0067240858118134805,
+      "rate_ci_high_T1": 0.012248801187014548,
+      "sparse_buyers": false,
+      "risk_difference": 0.005297138050781313,
+      "risk_difference_pp": 0.5297138050781313,
+      "difference_ci_low_pp": 0.20284738717394327,
+      "difference_ci_high_pp": 0.8770074611680059,
+      "ci_width_pp": 0.6741600739940625,
+      "status": "estimated"
+    },
+    {
+      "feature": "history_segment",
+      "level": "2) $100 - $200",
+      "label": "历史消费第2档",
+      "customers_T0": 2926,
+      "buyers_T0": 11,
+      "rate_T0": 0.0037593984962406013,
+      "rate_ci_low_T0": 0.0021005113379789523,
+      "rate_ci_high_T0": 0.006719576432604959,
+      "customers_T1": 2810,
+      "buyers_T1": 23,
+      "rate_T1": 0.008185053380782919,
+      "rate_ci_low_T1": 0.00546036511942532,
+      "rate_ci_high_T1": 0.01225259403271651,
+      "sparse_buyers": false,
+      "risk_difference": 0.004425654884542317,
+      "risk_difference_pp": 0.4425654884542317,
+      "difference_ci_low_pp": 0.040240004094637113,
+      "difference_ci_high_pp": 0.8818466462447494,
+      "ci_width_pp": 0.8416066421501122,
+      "status": "estimated"
+    },
+    {
+      "feature": "history_segment",
+      "level": "3) $200 - $350",
+      "label": "历史消费第3档",
+      "customers_T0": 2413,
+      "buyers_T0": 18,
+      "rate_T0": 0.0074595938665561546,
+      "rate_ci_low_T0": 0.0047237823033670495,
+      "rate_ci_high_T0": 0.011761146269537729,
+      "customers_T1": 2464,
+      "buyers_T1": 38,
+      "rate_T1": 0.015422077922077922,
+      "rate_ci_low_T1": 0.011256532555281579,
+      "rate_ci_high_T1": 0.021096217875796727,
+      "sparse_buyers": false,
+      "risk_difference": 0.007962484055521767,
+      "risk_difference_pp": 0.7962484055521767,
+      "difference_ci_low_pp": 0.1974569453722987,
+      "difference_ci_high_pp": 1.4261732353824292,
+      "ci_width_pp": 1.2287162900101305,
+      "status": "estimated"
+    },
+    {
+      "feature": "history_segment",
+      "level": "4) $350 - $500",
+      "label": "历史消费第4档",
+      "customers_T0": 1290,
+      "buyers_T0": 14,
+      "rate_T0": 0.010852713178294573,
+      "rate_ci_low_T0": 0.006475639721464912,
+      "rate_ci_high_T0": 0.018134376137600897,
+      "customers_T1": 1250,
+      "buyers_T1": 29,
+      "rate_T1": 0.0232,
+      "rate_ci_low_T1": 0.01620125001283791,
+      "rate_ci_high_T1": 0.03312034354721183,
+      "sparse_buyers": false,
+      "risk_difference": 0.012347286821705425,
+      "risk_difference_pp": 1.2347286821705425,
+      "difference_ci_low_pp": 0.22475285654036914,
+      "difference_ci_high_pp": 2.3190348572944797,
+      "ci_width_pp": 2.0942820007541103,
+      "status": "estimated"
+    },
+    {
+      "feature": "history_segment",
+      "level": "5) $500 - $750",
+      "label": "历史消费第5档",
+      "customers_T0": 1004,
+      "buyers_T0": 5,
+      "rate_T0": 0.0049800796812749,
+      "rate_ci_low_T0": 0.002129012156457228,
+      "rate_ci_high_T0": 0.01160475390322684,
+      "customers_T1": 957,
+      "buyers_T1": 14,
+      "rate_T1": 0.014629049111807733,
+      "rate_ci_low_T1": 0.008733934968357688,
+      "rate_ci_high_T1": 0.024405204198030186,
+      "sparse_buyers": false,
+      "risk_difference": 0.009648969430532832,
+      "risk_difference_pp": 0.9648969430532832,
+      "difference_ci_low_pp": 0.07811241842906932,
+      "difference_ci_high_pp": 1.983237722463315,
+      "ci_width_pp": 1.9051253040342455,
+      "status": "estimated"
+    },
+    {
+      "feature": "history_segment",
+      "level": "6) $750 - $1,000",
+      "label": "历史消费第6档",
+      "customers_T0": 386,
+      "buyers_T0": 2,
+      "rate_T0": 0.0051813471502590676,
+      "rate_ci_low_T0": 0.0014220641692522101,
+      "rate_ci_high_T0": 0.0186924173546351,
+      "customers_T1": 396,
+      "buyers_T1": 7,
+      "rate_T1": 0.017676767676767676,
+      "rate_ci_low_T1": 0.008588431032256646,
+      "rate_ci_high_T1": 0.03603290181630869,
+      "sparse_buyers": true,
+      "risk_difference": 0.012495420526508608,
+      "risk_difference_pp": 1.2495420526508607,
+      "difference_ci_low_pp": -0.3787910859652511,
+      "difference_ci_high_pp": 3.123254594851801,
+      "ci_width_pp": 3.5020456808170524,
+      "status": "estimated"
+    },
+    {
+      "feature": "history_segment",
+      "level": "7) $1,000 +",
+      "label": "历史消费第7档",
+      "customers_T0": 269,
+      "buyers_T0": 4,
+      "rate_T0": 0.01486988847583643,
+      "rate_ci_low_T0": 0.005797404627492904,
+      "rate_ci_high_T0": 0.03760310668730729,
+      "customers_T1": 281,
+      "buyers_T1": 2,
+      "rate_T1": 0.0071174377224199285,
+      "rate_ci_low_T1": 0.001954033090224133,
+      "rate_ci_high_T1": 0.02557517158791324,
+      "sparse_buyers": true,
+      "risk_difference": -0.007752450753416502,
+      "risk_difference_pp": -0.7752450753416502,
+      "difference_ci_low_pp": -3.1064678395710392,
+      "difference_ci_high_pp": 1.2814462058861205,
+      "ci_width_pp": 4.38791404545716,
+      "status": "estimated"
+    }
+  ],
+  "notes": [
+    "本步为总体训练效果已查看后的新增探索，不是项目开始时预注册的假设验证。",
+    "newbie=1指过去12个月新获取的客户，不能直接解释为首单客户。",
+    "原有history_segment标签原样保留，不依据分层购买结果重新分箱或合并。",
+    "两套分层使用同一批客户，9行不是9个独立实验；各维度的样本数分别回到25567。",
+    "区间为单项95%区间，未作多重比较调整，不承诺9个区间同时覆盖。",
+    "点估计不同，或一组区间跨0而另一组不跨0，均不能单独证明群体效果不同。",
+    "没有进行异质性的直接检验，不据此对客户群贴有效/无效标签或选最终名单。",
+    "后续如要证明异质性，需预先固定效应尺度并直接比较效应差或相应交互。",
+    "区间依赖独立客户/二项样本假设；原数据无客户ID，无法完全核验身份重复。",
+    "只解析训练行的conversion；不查看验证/测试Y，不去重，不重拆分，不改原始数据。"
+  ],
+  "method_references": [
+    "https://www.statsmodels.org/stable/generated/statsmodels.stats.proportion.proportion_confint.html",
+    "https://www.statsmodels.org/stable/generated/statsmodels.stats.proportion.confint_proportions_2indep.html"
+  ],
+  "runtime": {
+    "executable": "D:\\营销项目\\marketing_project_starter\\.venv\\Scripts\\python.exe",
+    "python": "3.12.0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "statsmodels": "0.15.0"
+  },
+  "script_sha256": "5c4829c802edddb302bdaa4cb5e7a719c9b402fb303bb8ad62ecf0c9df988f15",
+  "source_csv_sha256": "00a6a868e05a9ffe7382da51629f6d6dce88c5acfc945e79d314ebc78fd3a2c0",
+  "split_csv_sha256": "7e0de1b0e59d952d524f5c7edbfbe122cb85212e439bfdcb9150da03bb7c3cd1",
+  "specification_sha256": "1f7fa811973977fcdad912d665e8808500300ab0db4732145a912c504bae491c",
+  "specification_record_sha256": "0bf823b0bebbaeda51f64f3bc3dce991692870cd72d0bffefb12aef8917e16d1"
+}
