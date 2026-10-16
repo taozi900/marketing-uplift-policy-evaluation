@@ -4,7 +4,36 @@
 
 基于 Hillstrom 公开随机邮件实验的个人学习研究项目。使用经典回归、随机实验评价和配对 Bootstrap，将业务问题连接到客户排序与独立测试；代码、结果表、图表和运行规则均保留。适用于展示营销增量与用户增长策略分析思路。
 
-`Python` · `pandas` · `scikit-learn` · `S-learner` · `IPW` · `Bootstrap`
+## 个人背景与项目动机
+
+本人统计学专业，拥有市场方向实习经历。在市场业务实践中发现，营销投放经常直接依据购买概率排序触达客户，忽略营销干预带来的真实增量效应。本项目从该业务痛点出发，结合因果推断、Bootstrap 区间估计等统计学方法，对比两套客户触达排序策略。
+
+## 项目亮点
+1. 区分「预测购买概率」和「营销带来的增量效应」，落地真实营销预算分配决策问题；
+2. 使用配对Bootstrap计算95%置信区间，不只输出点估计，量化结果统计不确定性，发挥统计学专业优势；
+3. 对比两套客户筛选策略，验证增量排序的业务价值，掌握随机A/B实验、Uplift因果推断在营销场景的落地方式；
+4. 完整工程链路：数据清洗、建模、协变量平衡校验、离线评估、可视化、结论统计检验，全程规避数据泄露。
+
+Python · pandas · scikit-learn · S-learner · IPW · Bootstrap · Uplift · ATE · Qini
+
+## 项目目录
+├─ 01_read_and_audit.py        # 数据读取、清洗、EDA 探索性分析
+├─ 02_lock_split.py            # 数据集划分，规避数据泄露
+├─ 03_train_effect.py          # ITE 个体处理效应估计，S-learner 建模
+├─ 04_train_balance.py         # 协变量平衡性检验
+├─ 05_train_subgroups.py       # 用户分群，四类响应人群划分
+├─ 06_train_bayes.py           # Bayesian uplift 模型
+├─ 07_train_ranker.py          # Uplift 排序模型，客户增量排序
+├─ 08_validate_policies.py     # 多套营销策略离线评估
+├─ 09_final_test.py            # 指标汇总，Qini 曲线、AUUC 计算
+├─ 11~14_plot_*.py             # 可视化脚本：Qini 曲线、人群分群、策略收益对比
+├─ tools/                      # 通用工具函数
+├─ docs/                       # 方法原理、实验日志文档
+├─ reports/                    # 实验输出：指标 json、csv、可视化图表
+├─ archive_manifest.json
+├─ requirements.txt
+├─ requirements-lock.txt
+└─ README.md
 
 ## 先看结论
 
