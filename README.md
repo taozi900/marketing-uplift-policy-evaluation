@@ -18,7 +18,7 @@ Python · pandas · scikit-learn · S-learner · IPW · Bootstrap · Uplift · A
 
 ## 项目目录
 ```
-├─ 01_read_and_audit.py      # 数据读取、清洗、EDA 探索性分析
+├─ 01_read_and_audit.py     # 数据读取、清洗、EDA 探索性分析
 ├─ 02_lock_split.py         # 数据集划分，规避数据泄露
 ├─ 03_train_effect.py       # ITE 个体处理效应估计，S-learner 建模
 ├─ 04_train_balance.py      # 协变量平衡性检验
